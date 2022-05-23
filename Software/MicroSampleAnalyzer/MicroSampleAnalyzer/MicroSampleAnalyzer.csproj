@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D3ED2E0A-F101-45BA-8113-9463EF26BADE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MicroSampleAnalyzer</RootNamespace>
+    <AssemblyName>MicroSampleAnalyzer</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DBLayer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLLs\DBLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.4.3.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.4.3\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="formPocetna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formPocetna.Designer.cs">
+      <DependentUpon>formPocetna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formPregledPacijenata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formPregledPacijenata.Designer.cs">
+      <DependentUpon>formPregledPacijenata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formPregledUzoraka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formPregledUzoraka.Designer.cs">
+      <DependentUpon>formPregledUzoraka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formPregledUzorka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formPregledUzorka.Designer.cs">
+      <DependentUpon>formPregledUzorka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formQRKod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formQRKod.Designer.cs">
+      <DependentUpon>formQRKod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formUnosPacijenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formUnosPacijenta.Designer.cs">
+      <DependentUpon>formUnosPacijenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formUnosUzorka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formUnosUzorka.Designer.cs">
+      <DependentUpon>formUnosUzorka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Djelatnik.cs" />
+    <Compile Include="Models\Osoba.cs" />
+    <Compile Include="Models\Pacijent.cs" />
+    <Compile Include="Models\Uzorak.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\RepozitorijPacijenata.cs" />
+    <Compile Include="Repositories\RepozitorijUzoraka.cs" />
+    <Compile Include="Repositories\RepozitorijDjelatnika.cs" />
+    <EmbeddedResource Include="formPocetna.resx">
+      <DependentUpon>formPocetna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formPregledPacijenata.resx">
+      <DependentUpon>formPregledPacijenata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formPregledUzoraka.resx">
+      <DependentUpon>formPregledUzoraka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formPregledUzorka.resx">
+      <DependentUpon>formPregledUzorka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formQRKod.resx">
+      <DependentUpon>formQRKod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formUnosPacijenta.resx">
+      <DependentUpon>formUnosPacijenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formUnosUzorka.resx">
+      <DependentUpon>formUnosUzorka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="DLLs\DBLayer.dll" />
+    <None Include="Resources\search-icon-256-915059353.png" />
+    <None Include="Resources\Gakuseisean-Ivista-2-Start-Menu-Search.ico" />
+    <None Include="Resources\1024px-Search_Icon.svg.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
